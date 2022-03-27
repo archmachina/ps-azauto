@@ -20,7 +20,7 @@ jobs:
       - name: Build
         shell: pwsh
         run: |
-          ./Build.ps1 -Stages Build,Test,Push
+          ./Build.ps1 -Stages Build,Test
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
