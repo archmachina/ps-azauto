@@ -8,25 +8,26 @@ $InformationPreference = "Continue"
 Set-StrictMode -Version 2
 
 # Sources for reading script vars
-$script:Sources = $("azauto", "environment")
+$script:Source = $("azauto", "environment")
 
 <#
 #>
-Function Set-ScriptVarSources
+Function Set-ScriptVarSource
 {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseShouldProcessForStateChangingFunctions", "")]
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$true)]
         [ValidateNotNullOrEmpty()]
         [ValidateSet("azauto", "environment")]
-        [string[]]$Sources
+        [string[]]$Source
     )
 
     process
     {
         # Set the script sources to input, but make a new container for
         # these strings
-        $script:Sources = $Sources | ForEach-Object { $_ }
+        $script:Source = $Source | ForEach-Object { $_ }
     }
 }
 
@@ -34,6 +35,7 @@ Function Set-ScriptVarSources
 #>
 Function Get-ScriptVar
 {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingEmptyCatchBlock", "")]
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$true)]
@@ -46,12 +48,12 @@ Function Get-ScriptVar
         [Parameter(Mandatory=$false)]
         [ValidateNotNullOrEmpty()]
         [ValidateSet("azauto", "environment")]
-        [string[]]$Sources = $script:Sources
+        [string[]]$Source = $script:Source
     )
 
     process
     {
-        if ($Sources -contains "azauto")
+        if ($Source -contains "azauto")
         {
             # Attempt to get the variable from Azure Automation
             try {
@@ -62,7 +64,7 @@ Function Get-ScriptVar
             }
         }
 
-        if ($Sources -contains "environment")
+        if ($Source -contains "environment")
         {
             # Attempt to get the variable from the environment
             try {
