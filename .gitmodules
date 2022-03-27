@@ -1,0 +1,3 @@
+[submodule "source/Noveris.ModuleMgmt"]
+	path = source/Noveris.ModuleMgmt
+	url = https://github.com/noveris-inf/ps-modulemgmt
