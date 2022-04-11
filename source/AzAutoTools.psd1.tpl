@@ -1,8 +1,8 @@
-# Module manifest for Noveris.AzAuto
+# Module manifest for AzAutoTools
 
 @{
     # Script module or binary module file associated with this manifest.
-    RootModule = 'Noveris.AzAuto.psm1'
+    RootModule = 'AzAutoTools.psm1'
 
     # Version number of this module.
     ModuleVersion = '__FULLVERSION__'
@@ -14,16 +14,16 @@
     )
 
     # ID used to uniquely identify this module
-    GUID = '5370e32a-df3f-4517-af90-ce538b4723ae'
+    GUID = '85647c07-ab52-45f5-9fa8-d86d720f0908'
 
     # Author of this module
-    Author = 'Noveris Pty Ltd'
+    Author = 'Jesse Reichman'
 
     # Company or vendor of this module
-    CompanyName = 'Noveris Pty Ltd'
+    CompanyName = 'ArchMachina'
 
     # Copyright statement for this module
-    Copyright = '(c) 2022 Noveris Pty Ltd. All rights reserved.'
+    Copyright = '(c) 2020 Jesse Reichman. All rights reserved.'
 
     # Description of the functionality provided by this module
     Description = 'Azure Automation Utilities'
@@ -65,7 +65,7 @@
 
     # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
     NestedModules = @(
-        'Noveris.AzAuto.psm1'
+        'AzAutoTools.psm1'
     )
 
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
@@ -88,7 +88,7 @@
 
     # List of all modules packaged with this module
     #ModuleList = @(
-    #    'Noveris.AzAuto.psm1'
+    #    'AzAutoTools.psm1'
     #)
 
     # List of all files packaged with this module
@@ -106,10 +106,10 @@
             )
 
             # A URL to the license for this module.
-            LicenseUri = 'https://github.com/noveris-inf/noveris-ps-azauto/blob/main/LICENSE'
+            LicenseUri = 'https://github.com/archmachina/ps-azautotools/blob/main/LICENSE'
 
             # A URL to the main website for this project.
-            ProjectUri = 'https://github.com/noveris-inf/noveris-ps-azauto/'
+            ProjectUri = 'https://github.com/archmachina/ps-azautotools/'
 
             # A URL to an icon representing this module.
             # IconUri = ''

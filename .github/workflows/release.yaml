@@ -1,14 +1,13 @@
-name: Versioned
+name: release
 on:
   push:
     tags:
       - "v*"
 
 jobs:
-  Release:
-    name: "Release"
+  release:
+    name: "release"
     runs-on: ubuntu-latest
-    environment: release
 
     steps:
       - name: Checkout
@@ -16,10 +15,10 @@ jobs:
         with:
           submodules: true
 
-      - name: Release
+      - name: release
         shell: pwsh
         run: |
-          ./Build.ps1 -Stages Build,Test,Release,Publish
+          ./entrypoint.ps1 release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
